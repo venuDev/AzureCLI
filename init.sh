@@ -7,6 +7,7 @@ server="server$randomIdentifier"
 database="database$randomIdentifier"
 blobaccount="azblob$randomIdentifier"
 resourcegroupid="learn-948f8dad-bf27-48f2-b535-7f034439e5f9"
+adfname="azadf$randomIdentifier"
 
 login="rootuser"
 password="Root(24)"
@@ -27,3 +28,5 @@ az sql server firewall-rule create -g $resourcegroupid --server $server -n Allow
 echo "Creating $database on $server..."
 az sql db create -g $resourcegroupid --server $server --name $database --sample-name AdventureWorksLT 
 # zone redundancy is only supported on premium and business critical service tiers
+
+az datafactory factory create -n $adfname -g $resourcegroupid -l $location
