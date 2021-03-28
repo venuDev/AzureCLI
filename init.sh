@@ -15,6 +15,8 @@ password="Root(24)"
 startIP=0.0.0.0
 endIP=0.0.0.0
 
+az config set extension.use_dynamic_install=yes_without_prompt
+
 echo "Creating $resource..."
 #az group create --name $resource --location "$location"
 echo "Creating $blobaccount..."
