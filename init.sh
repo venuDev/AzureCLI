@@ -1,12 +1,12 @@
 #!/bin/bash
 location="eastus"
-randomIdentifier=ngp589
+randomIdentifier="ngp"$RANDOM
 
 resource="resource$randomIdentifier"
 server="server$randomIdentifier"
 database="database$randomIdentifier"
 blobaccount="azblob$randomIdentifier"
-resourcegroupid="learn-948f8dad-bf27-48f2-b535-7f034439e5f9"
+resourcegroupid=$(az group list --query '[0].name' --output tsv)
 adfname="azadf$randomIdentifier"
 
 login="rootuser"
